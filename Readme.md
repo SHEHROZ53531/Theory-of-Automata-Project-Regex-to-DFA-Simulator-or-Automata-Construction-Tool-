@@ -8,6 +8,23 @@ The core alphabet for this simulator is **{n, o, p}**.
 
 ---
 
+👥 Team Members Shahroz Khalid [53531]
+
+Sinwan Haider [56275]
+
+📚 Academic Context Course: Theory of Automata Section: BSCS 5-1 Faculty: Computing Supervisor: Dr. Musharraf Ahmed Submission Date: 17 November 2025
+
+📄 License This project is licensed for academic purposes under the Faculty of Computing, Theory of Automata Course.
+
+🆘 Support For questions or issues regarding this project, please contact:
+
+Shahroz Khalid: [53531@students.riphah.edu.pk]
+
+Sinwan Haider: [56275@student.riphah.edu.pk]
+
+Note: This project is developed as part of the Theory of Automata course requirements at the Faculty of Computing.
+
+
 ## ⚙️ Core Functionality and Methods Used
 
 The application provides sequential steps for automata construction, with the specific theoretical method cited for each conversion:
