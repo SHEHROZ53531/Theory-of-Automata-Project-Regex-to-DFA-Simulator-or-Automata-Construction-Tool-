@@ -203,24 +203,23 @@ def gui_minimize_dfa():
         output_box.insert(tk.END, f"Unable to render minimized DFA: {e}\n")
 
 
+# ---------- GUI callbacks (UPDATED SIMULATE FUNCTION) ----------
+
 def gui_simulate():
-    global GLOBAL_NFA, GLOBAL_DFA, GLOBAL_MIN_DFA
-    if GLOBAL_NFA is None:
-        try:
-            gui_build_nfa()
-        except Exception:
-            return
-    if GLOBAL_DFA is None:
-        build_dfa_noninteractive()
+    global GLOBAL_MIN_DFA
+
+    # --- CRITICAL CHANGE: Check if Minimized DFA is built ---
     if GLOBAL_MIN_DFA is None:
-        minimize_dfa_noninteractive()
+        messagebox.showerror(
+            "Simulation Error", 
+            "The Minimized DFA must be built first. Please click 'Build NFA', 'Build DFA', and 'Minimize DFA'."
+        )
+        return
+    # --------------------------------------------------------
 
     s = input_entry.get().strip()
     output_box.delete(1.0, tk.END)
-    output_box.insert(tk.END, "Simulating on Minimized DFA (auto-built if needed)\n\n")
-    if GLOBAL_MIN_DFA is None:
-        output_box.insert(tk.END, "Minimized DFA not available.\n")
-        return
+    output_box.insert(tk.END, "Simulating on Minimized DFA\n\n")
 
     populate_table_from_dfa(GLOBAL_MIN_DFA)
 
